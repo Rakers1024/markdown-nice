@@ -119,6 +119,8 @@ export const solveHtml = () => {
   const markdownStyle = document.getElementById(MARKDOWN_THEME_ID).innerText;
   const codeStyle = document.getElementById(CODE_THEME_ID).innerText;
   const fontStyle = document.getElementById(FONT_THEME_ID).innerText;
+  // console.log("id", basicStyle, markdownStyle, codeStyle, fontStyle);
+  console.log("solveHtml", html);
   let res = "";
   try {
     res = juice.inlineContent(html, basicStyle + markdownStyle + codeStyle + fontStyle, {

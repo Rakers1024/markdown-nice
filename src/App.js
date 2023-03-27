@@ -46,6 +46,7 @@ import {message} from "antd";
 class App extends Component {
   constructor(props) {
     super(props);
+    console.log("props", props);
     this.scale = 1;
     this.handleUpdateMathjax = throttle(updateMathjax, THROTTLE_MATHJAX_TIME);
     this.handleThrottleChange = throttle(this.handleChange, THROTTLE_MD_RENDER_TIME);
@@ -308,6 +309,8 @@ class App extends Component {
     const {isSearchOpen} = this.props.dialog;
 
     const parseHtml = markdownParser.render(this.props.content.content);
+
+    console.log("解析后文章", parseHtml);
 
     const mdEditingClass = classnames({
       "nice-md-editing": !isImmersiveEditing,
